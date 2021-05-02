@@ -7,9 +7,11 @@ exports.login_get = (req, res) => {
 }
 
 exports.signUp_post = (req, res) => {
-  res.render('new Post');
+  const {email, password} = req.body;
+  res.status(200).json({email, password});
 }
 
 exports.login_post = (req, res) => {
-  res.render('new Sign up');
+  const {email, password} = req.body;
+  res.status(200).json({email, password});
 }
