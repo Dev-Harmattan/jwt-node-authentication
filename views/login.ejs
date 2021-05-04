@@ -15,7 +15,7 @@
   const form = document.querySelector('form');
   const emailError = document.querySelector('.error.email');
   const passwordError = document.querySelector('.error.password');
-  
+
   form.addEventListener('submit', async function(e){
     e.preventDefault();
 
@@ -35,17 +35,17 @@
         body: JSON.stringify({email, password})
       })
       const data = await res.json();
-      console.log(data);
       if(data.errors){
         emailError.textContent = data.errors.email;
         passwordError.textContent = data.errors.password;
       }
       if(data.user){
+        console.log(data.user);
         location.assign('/');
       }
 
     }catch(error){
-
+      console.log(error);
     }
   });
 </script>
